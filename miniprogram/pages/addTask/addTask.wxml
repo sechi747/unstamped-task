@@ -1,0 +1,83 @@
+<form bindsubmit="addData">
+  <view class="inputField">
+    <van-field
+      placeholder="请输入事项标题，最多可输入20个字符"
+      bind:blur="handleFieldBlur"
+      input-class="field-input"
+      left-icon="edit"
+      clearable="true"
+      maxlength="20"
+      show-word-limit="true"
+    />
+  </view>
+
+  <view class="radioGroup">
+    <van-radio-group value="{{level}}" bind:change="onLevelChange" direction="horizontal">
+      <van-radio name="trivial" checked-color="#2ecc71" label-position="left" label-class="radio1">琐碎小事</van-radio>
+      <van-radio name="middle" checked-color="#f39c12" label-position="left" label-class="radio2">日常安排</van-radio>
+      <van-radio name="important" checked-color="#f5222d" label-position="left" label-class="radio3">重要事务</van-radio>
+    </van-radio-group>
+  </view>
+
+  <view class="textareaContainer">
+    <view class="textareaTitle">
+      <van-icon name="edit"></van-icon>
+      <text>{{titleText}}</text>
+    </view>
+
+    <van-field
+      type="textarea"
+      placeholder="请输入事项内容，最多可输入160个字符"
+      bind:blur="handleTextareaBlur"
+      input-class="textarea-input"
+      clearable="true"
+      maxlength="160"
+      show-word-limit="true"
+    />
+  </view>
+
+  <view class="deadlineContainer">
+    <text>截止时间：{{deadline}}</text>
+  </view>
+
+  <view class="btnContainer">
+    <van-button round custom-class="button1" color="linear-gradient(to left, #348AC7, #2762b5)" bindclick="onChooseTime" icon="clock-o">选择时间</van-button>
+    <van-button round custom-class="button2" color="linear-gradient(to bottom, #4d87d9, #1f4f93)" form-type="submit" icon="success" ></van-button>
+  </view>
+
+  <van-popup
+  show="{{isShow}}"
+  z-index= -1
+  position="bottom"
+  custom-style="height: 40%;"
+  bind:close="onClose"
+>
+<van-datetime-picker
+  item-height="32"
+  title="你的时间非常宝贵"
+  type="datetime"
+  active-class="activeTime"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:confirm="onTimeConfirm"
+  bind:cancel="onTimeCancel"
+/>
+</van-popup>
+</form>
+
+<van-tabbar active="{{activeBar}}" bind:change="onChange" placeholder active-color="#597ef7">
+  <van-tabbar-item name="index">
+    <van-icon name="home-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="addTask">
+    <van-icon name="add-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="personal">
+    <van-icon name="contact" size="60rpx"></van-icon>
+  </van-tabbar-item>
+</van-tabbar>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+

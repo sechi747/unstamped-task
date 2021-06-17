@@ -1,0 +1,30 @@
+<view class="title">
+  <text>常见问题</text>
+</view>
+
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+  <van-collapse-item title="我该怎么查看问题的答案？" name="1">
+    很简单，当你看到这句话的时候我相信你已经知道如何操作了。
+  </van-collapse-item>
+  <van-collapse-item title="如何新建一个事项？" name="2">
+    显而易见，你应该点击下方导航栏的 + 来新建一个事项。
+  </van-collapse-item>
+  <van-collapse-item title="如何删除或完成一个事项？" name="3">
+    告诉你个秘密：事项块是可以滑动的，左滑会显示删除事项按钮，右滑会显示完成事项按钮。
+  </van-collapse-item>
+  <van-collapse-item title="如何订阅提醒？" name="4">
+    在事项的详情页可以订阅提醒，请记得点击允许发送通知哦。在事项截止前半个小时会通过微信推送通知，请注意查收。
+  </van-collapse-item>
+  <van-collapse-item title="如何取消提醒？" name="5">
+    在事项的详情页可以取消订阅提醒，是不是很贴心呢？
+  </van-collapse-item>
+  <van-collapse-item title="为什么点击订阅提醒没有反应？" name="6">
+    由于微信官方的规定，如果你在某一次订阅中勾选了“记住我的选择，以后不再询问”这个选项，那么之后每一次订阅都不会再弹出提示框。也就是说如果当时你拒绝了，你以后的每一次点击都不会订阅提醒，如果当时你同意了，那么之后你的每一次点击都会直接订阅提醒且不弹出提示框。
+  </van-collapse-item>
+  <van-collapse-item title="为什么功能这么简单？" name="7">
+    简约风格起源于现代派的极简主义。简约风格就是简单而有品味，这种品味体现在设计上的细节的把握，每一个细小的局部和装饰都要深思熟虑，达到简约而不简单的效果。（其实就是作者技术太水，又不想承认自己一无是处，所以做了一个特别鸡肋的小程序）
+  </van-collapse-item>
+  <van-collapse-item title="这个页面真的有存在的必要吗？功能这么简单的程序真的会有人不会用吗？" name="8">
+    因为看到大部分小程序都有这么一个页面，为了能看上去更专业一点所以也写了一个。并且写了这么多条常见问题或许可以显得这个小程序功能很丰富？
+  </van-collapse-item>
+</van-collapse>

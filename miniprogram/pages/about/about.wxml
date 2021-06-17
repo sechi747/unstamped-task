@@ -1,0 +1,27 @@
+<view class="logo">
+  <image src="https://z3.ax1x.com/2021/06/16/2L9yJs.jpg"></image>
+  <view class="content">
+    <text>路漫漫其修远兮，</text>
+    <text>吾将上下而求索。</text>
+  </view>
+</view>
+
+<van-divider borderColor="#00897b"  />
+
+<view class="sourceContainer">
+  <view class="source">
+    <view class="icon">
+      <text class="iconfont icon-github"></text>
+      <text class="iconfont icon-gitee"></text>
+    </view>
+    <text class="star">本项目已开源，如果觉得还不错的话请给我点亮一颗 star 吧</text>
+  </view>
+</view>
+
+<view class="coffeeContainer">
+  <view class="coffee">
+    <text class="iconfont icon-kafei1"></text>
+    <text class="star">用起来还不错？点一下可以请作者喝杯咖啡</text>
+  </view>
+</view>
+

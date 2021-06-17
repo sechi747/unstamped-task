@@ -1,0 +1,31 @@
+<view class="listContainer">
+
+  <block wx:for="{{tasks}}" wx:key="index">
+    <van-swipe-cell id="{{item._id}}" name="{{index}}" right-width="48" left-width="48" async-close bind:close="onSwipeClose" disabled="{{item.done}}" bind:open="onSwipeOpen" >
+      <view slot="left" class="slot-left">
+        <van-icon name="close" size="50rpx" />
+      </view>
+      <van-cell-group>
+          <van-cell title="{{item.title}}" value="{{item.level}}" size="large" title-class="{{item.done?'cell-title-finished':'cell-title'}}" value-class="{{item.done?'cell-value-finished':'cell-value'}}" bind:click="{{isSwipe?'':'toTaskInfo'}}" data-id="{{item._id}}"/>
+      </van-cell-group>
+      <view slot="right" class="slot-right">
+        <van-icon name="passed" size="50rpx" />
+      </view>
+    </van-swipe-cell>
+  </block>
+
+</view>
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<van-tabbar active="{{activeBar}}" bind:change="onChange" placeholder active-color="#597ef7">
+  <van-tabbar-item name="index">
+    <van-icon name="home-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="addTask">
+    <van-icon name="add-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="personal">
+    <van-icon name="contact" size="60rpx"></van-icon>
+  </van-tabbar-item>
+</van-tabbar>

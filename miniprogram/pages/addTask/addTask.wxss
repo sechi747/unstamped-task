@@ -1,0 +1,147 @@
+/* 标题输入框 */
+.inputField {
+  margin-top: 20rpx;
+}
+
+.field-input {
+  padding-left: 12rpx !important;
+  border: 1rpx solid #d9d9d9 !important;
+  background-color: rgba(243,242,238, 0.5) !important;
+  border-radius: 30rpx;
+  height: 50rpx !important;
+  line-height: 50rpx !important;
+}
+
+/* 单选框 */
+.radioGroup {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.radio1 {
+  font-style: italic;
+  font-size: 34rpx;
+  color: #2ecc71 !important;
+}
+
+.radio2 {
+  font-style: italic;
+  font-size: 34rpx;
+  color: #f39c12 !important;
+}
+
+.radio3 {
+  font-style: italic;
+  font-size: 34rpx;
+  color: #f5222d !important;
+}
+
+/* 图片预览 */
+.picView {
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+
+.picView .tip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700rpx;
+  height: 450rpx;
+  background-color: rgba(217,217,217, 0.3);
+  border-radius: 30rpx;
+}
+
+/* 内容输入框 */
+.textareaContainer {
+  margin-top: 30rpx;
+}
+
+.textareaTitle {
+  margin-top: 50rpx;
+  margin-left: 34rpx;
+  display: flex;
+  align-items: center;
+}
+
+.textareaTitle text {
+  margin-left: 14rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 任务内容 */
+.textarea-input {
+  padding-left: 12rpx !important;
+  margin-left: 30rpx !important;
+  font-size: 30rpx;
+  width: 700rpx !important;
+  height: 450rpx !important;
+  background-color: rgba(243,242,238, 0.5) !important;
+  border: 1rpx solid #d9d9d9 !important;
+  border-radius: 20rpx;
+}
+
+/* 截止时间 */
+.deadlineContainer {
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+
+.deadlineContainer text {
+  font-size: 34rpx;
+  animation: twinkling 10s infinite ease-in-out
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 按钮 */
+.btnContainer {
+  position: relative;
+  margin-top: 30rpx;
+}
+
+.button1 {
+  position: absolute;
+  top: 10rpx;
+  left: 70rpx;
+  width: 230rpx;
+  font-size: 28rpx !important;
+  margin-bottom: 16rpx;
+}
+
+.button2 {
+  position: absolute;
+  top: 10rpx;
+  left: 220rpx;
+  width: 230rpx;
+  font-size: 50rpx !important;
+  margin-bottom: 16rpx;
+}
+
+/* 时间选择器 */
+.activeTime {
+  background-color: rgba(210,210,210, 0.2);
+}
+
+
+
+

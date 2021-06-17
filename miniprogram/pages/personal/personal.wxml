@@ -1,0 +1,55 @@
+<!-- 用户信息区域 -->
+<view class="userInfoContainer">
+  <image src="{{userInfo?userInfo.avatarUrl:'https://z3.ax1x.com/2021/06/15/2qPZQ0.png'}}" class="avatar" bindtap="getUserProfile"></image>
+  <view class="usernameContainer">
+    <text class="username" bindtap="getUserProfile">{{userInfo?userInfo.nickName:'未登录'}}</text>
+    <text class="count">累计任务数量:{{count}}</text>
+  </view>
+</view>
+<!-- 意见反馈区域 -->
+<view class="feedbackContainer">
+  <button class='feedback' open-type="feedback">
+    <van-icon name="records" size="70rpx" color="#ff7875"></van-icon>
+    <text class='feedback-title'>意见反馈</text>
+  </button>
+  <button class='contact' bindtap="showAuthorWX">
+    <van-icon name="phone-o" size="70rpx" color="#69c0ff"></van-icon>
+    <text class='contact-title'>联系作者</text>
+  </button>
+  <button class='share' open-type="share">
+    <van-icon name="share-o" size="70rpx" color="#63e6be"></van-icon>
+    <text class='share-title'>分享小程序</text>
+  </button>
+</view>
+<!-- 功能区域 -->
+<van-cell-group>
+  <van-cell title="常见问题" is-link icon="question-o" link-type="navigateTo"
+  url="../FAQ/FAQ" />
+  <van-cell title="关于" icon="info-o" is-link link-type="navigateTo"
+  url="../about/about" />
+</van-cell-group>
+
+
+
+
+
+
+
+
+<van-tabbar active="{{activeBar}}" bind:change="onChange" placeholder active-color="#597ef7">
+  <van-tabbar-item name="index">
+    <van-icon name="home-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="addTask">
+    <van-icon name="add-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="personal">
+    <van-icon name="contact" size="60rpx"></van-icon>
+  </van-tabbar-item>
+</van-tabbar>
+
+<van-dialog use-slot id="van-dialog">
+  <image src="../../static/img/QrCode.png" show-menu-by-longpress mode="aspectFit" />
+</van-dialog>
+
+<van-toast id="van-toast" />

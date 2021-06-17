@@ -1,0 +1,86 @@
+page {
+  background-color: #f6f6f6;
+}
+
+.logo {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo image {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  top: 20rpx;
+  right: -18rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.sourceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.source {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 94%;
+  height: 300rpx;
+  background: linear-gradient(to bottom, #ECE9E6, #FFFFFF);
+  border-radius: 30rpx;
+  box-shadow: 10rpx 16rpx 12rpx #c0d6cb;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-github {
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+}
+
+.icon-gitee {
+  font-size: 100rpx;
+  color: #c71d23;
+}
+
+.star {
+  width: 400rpx;
+  font-size: 28rpx;
+}
+
+.coffeeContainer {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coffee {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 94%;
+  height: 200rpx;
+  background: linear-gradient(to bottom, #ECE9E6, #FFFFFF);
+  border-radius: 30rpx;
+  box-shadow: 10rpx 16rpx 12rpx #c0d6cb;
+}
+
+.icon-kafei1 {
+  font-size: 100rpx;
+}

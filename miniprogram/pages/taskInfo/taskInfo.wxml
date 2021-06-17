@@ -1,0 +1,44 @@
+<!-- 倒计时 -->
+<view class="countDownContainer">
+    <van-count-down use-slot time="{{ time }}" bind:change="onChange" auto-start="{{!task.done}}">
+        <view class="title">{{warningMsg}}</view>
+        <text class="countDownItem1">{{ timeData.hours }}</text>
+        <text class="countDownItem2">{{ timeData.minutes }}</text>
+        <text class="triangle"></text>
+        <text class="countDownItem3">{{ timeData.seconds }}</text>
+    </van-count-down>
+</view>
+<!-- 截止日期 -->
+<view wx:if="{{task.deadline}}" class="deadlineContainer">
+    <text>截止日期：{{deadline}}</text>
+</view>
+<!-- 任务状态 -->
+<van-divider customStyle="border-color: #bfbed3; color: #bfbed3; font-size: 32rpx;" 
+contentPosition="center" >
+    <text>{{task.done?'已完成':'进行中'}}</text>
+</van-divider>
+<!-- 任务标题 -->
+<view class="titleContainer">
+    <text>{{task.title}}</text>
+</view>
+<!-- 任务内容 -->
+<view class="contentContainer">
+    <text class="van-hairline--bottom">{{task.content}}</text>
+</view>
+<!-- 按钮区域 -->
+<van-row>
+    <van-col offset="3" span="8">
+        <van-button round custom-class="buttonType" color="linear-gradient(to left, #348AC7, #2762b5)"
+        bindclick="subscribeMsg" icon="tosend">订阅提醒</van-button>
+    </van-col>
+    <van-col offset="2" span="8">
+        <van-button round custom-class="buttonType" color="linear-gradient(to right, #4d87d9, #1f4f93)" icon="close">取消订阅</van-button>
+    </van-col>
+</van-row>
+
+<van-row custom-class="button3">
+    <van-col offset="8" span="8">
+        <van-button round custom-class="buttonType" icon="edit"
+        color="linear-gradient(to left, #348AC7, #1f4f93)" >编辑内容</van-button>
+    </van-col>
+</van-row>

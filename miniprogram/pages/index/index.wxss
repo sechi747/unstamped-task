@@ -1,0 +1,47 @@
+/* 事项样式 */
+.cell-title {
+  font-size: 28rpx !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cell-title-finished {
+  font-size: 28rpx !important;
+  text-decoration: line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cell-value {
+  font-size: 26rpx !important;
+}
+.cell-value-finished {
+  font-size: 26rpx !important;
+  text-decoration: line-through;
+}
+/* 滑动块样式 */
+.slot-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100rpx;
+  text-align: center;
+  background-color: rgba(250, 82, 82, 0.9);
+  color: white;
+}
+.slot-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100rpx;
+  text-align: center;
+  background-color: rgba(64, 192, 87, 0.9);
+  color: white;
+  z-index: 1000;
+}
+/* 底部导航栏样式 */
+.tabbar-icon {
+  size: 50rpx;
+}
