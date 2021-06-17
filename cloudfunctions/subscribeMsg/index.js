@@ -15,7 +15,7 @@ exports.main = async (event, context) => {
     let message = await db
       .collection('messages')
       .where({
-        id: event._id,
+        _id: event._id,
         touser: OPENID,
         templateId: event.templateId,
       })

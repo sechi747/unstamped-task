@@ -11,8 +11,8 @@
 <view class="sourceContainer">
   <view class="source">
     <view class="icon">
-      <text class="iconfont icon-github"></text>
-      <text class="iconfont icon-gitee"></text>
+      <text class="iconfont icon-github" bindtap="toGithub"></text>
+      <text class="iconfont icon-gitee" bindtap="toGitee"></text>
     </view>
     <text class="star">本项目已开源，如果觉得还不错的话请给我点亮一颗 star 吧</text>
   </view>
@@ -20,8 +20,39 @@
 
 <view class="coffeeContainer">
   <view class="coffee">
-    <text class="iconfont icon-kafei1"></text>
+    <text class="iconfont icon-kafei1" bindtap="drinkCoffee"></text>
     <text class="star">用起来还不错？点一下可以请作者喝杯咖啡</text>
   </view>
 </view>
 
+
+<van-popup
+  show="{{showGithub}}"
+  closeable
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onClose"
+>
+  <view class="githubContainer">
+    <text class="tip">由于微信的规定，请手动复制链接或通过二维码进入项目地址</text>
+    <text class="githubTitle" user-select >https://github.com/sechi747/unstamped-task</text>
+    <image class="githubImg" src="../../static/img/github.png" mode="aspectFit" show-menu-by-longpress ></image>
+  </view>
+
+</van-popup>
+
+<van-popup
+  show="{{showGitee}}"
+  closeable
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onClose"
+>
+  <view class="giteeContainer">
+    <text class="tip">由于微信的规定，请手动复制链接或通过二维码进入项目地址</text>
+    <text class="giteeTitle" user-select >https://gitee.com/sechi747/unstamped-task</text>
+    <image class="giteeImg" src="../../static/img/gitee.png" mode="aspectFit" show-menu-by-longpress ></image>
+  </view>
+</van-popup>
+
+<van-notify id="van-notify" />

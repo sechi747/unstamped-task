@@ -1,5 +1,4 @@
 <view class="listContainer">
-
   <block wx:for="{{tasks}}" wx:key="index">
     <van-swipe-cell id="{{item._id}}" name="{{index}}" right-width="48" left-width="48" async-close bind:close="onSwipeClose" disabled="{{item.done}}" bind:open="onSwipeOpen" >
       <view slot="left" class="slot-left">
@@ -13,8 +12,14 @@
       </view>
     </van-swipe-cell>
   </block>
-
 </view>
+
+<block wx:if="{{tasks.length === 0}}">
+    <image src="https://z3.ax1x.com/2021/06/17/2xlNND.jpg" class="tip1" mode="aspectFit"></image>
+    <text class="tip2">不要犹豫啦，点击这里来添加事项吧</text>
+    <text class="iconfont icon-arrowDown"></text>
+</block>
+
 <van-toast id="van-toast" />
 <van-dialog id="van-dialog" />
 

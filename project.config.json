@@ -37,7 +37,7 @@
     "minifyWXSS": true
   },
   "appid": "wxfafebe16a980e8e6",
-  "projectname": "ToDoList",
+  "projectname": "%E7%84%A1%E5%8D%B0Task",
   "libVersion": "2.17.0",
   "condition": {
     "search": {

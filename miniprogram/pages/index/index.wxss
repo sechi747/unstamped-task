@@ -5,6 +5,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .cell-title-finished {
   font-size: 28rpx !important;
   text-decoration: line-through;
@@ -12,13 +13,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .cell-value {
   font-size: 26rpx !important;
 }
+
 .cell-value-finished {
   font-size: 26rpx !important;
   text-decoration: line-through;
 }
+
 /* 滑动块样式 */
 .slot-left {
   display: flex;
@@ -30,6 +34,7 @@
   background-color: rgba(250, 82, 82, 0.9);
   color: white;
 }
+
 .slot-right {
   display: flex;
   justify-content: center;
@@ -41,7 +46,32 @@
   color: white;
   z-index: 1000;
 }
+
 /* 底部导航栏样式 */
-.tabbar-icon {
+/* .tabbar-icon {
   size: 50rpx;
+} */
+
+/* 提示区域 */
+.tip1 {
+  position: absolute;
+  top: 35%;
+  left: calc(50vw - 150rpx);
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.tip2 {
+  position: absolute;
+  top: calc(100vh - 190rpx);
+  left: calc(50vw - 210rpx);
+  font-size: 26rpx;
+  width: 420rpx;
+}
+
+.icon-arrowDown {
+  position: absolute;
+  top: calc(100vh - 160rpx);
+  left: calc(50vw - 31rpx);
+  font-size: 62rpx;
 }

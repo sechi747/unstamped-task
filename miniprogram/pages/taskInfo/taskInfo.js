@@ -1,3 +1,4 @@
+import Toast from '@vant/weapp/toast/toast';
 const moment = require('moment')
 const db = wx.cloud.database()
 const todos = db.collection('todos')
@@ -57,11 +58,15 @@ Page({
   subscribeMsg() {
     const item = this.data.task
     const that = this
+
+    if (!this.data.task.deadline) {
+      Toast.fail('这个事项并没有截止日期')
+      return
+    }
     // 调用微信 API 申请发送订阅消息
     wx.requestSubscribeMessage({
       tmplIds: ['EUx7Bdl5gkvpySfmDaAvCSQ0mxaNc9WW2kPOIx1i-0M'],
       success(res) {
-        console.log('成功',res)
         // 申请订阅成功
         if (res['EUx7Bdl5gkvpySfmDaAvCSQ0mxaNc9WW2kPOIx1i-0M'] === 'accept') {
           // 这里将订阅的课程信息调用云函数存入db
@@ -79,79 +84,55 @@ Page({
               },
             })
             .then(() => {
-              wx.showToast({
-                title: '订阅成功',
-                icon: 'success',
-                duration: 2000,
-              })
+              Toast.success('订阅成功啦')
             })
             .catch(() => {
-              wx.showToast({
-                title: '订阅失败',
-                icon: 'error',
-                duration: 2000,
-              })
+              Toast.fail('订阅失败')
             })
         } else {
-          wx.showToast({
-            title: '订阅失败',
-            icon: 'error',
-            duration: 2000,
-          })
+          Toast.fail('订阅失败')
         }
       },
       fail(err) {
-          wx.showToast({
-            title: `错误代码:${err.errCode}`,
-            icon: 'error',
-            duration: 2000,
-          })
+          Toast.fail(`错误代码:${err.errCode}`)
         }
     });
   },
 
-  
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  unsubscribeMsg() {
+    // 获取课程信息
+    const item = this.data.task
+    const templateId = 'EUx7Bdl5gkvpySfmDaAvCSQ0mxaNc9WW2kPOIx1i-0M'
 
+    if (!this.data.task.deadline) {
+      Toast.fail('这个事项并没有截止日期')
+      return
+    }
+    // 这里将订阅的课程信息调用云函数存入db
+    wx.cloud
+      .callFunction({
+        name: 'unsubscribeMsg',
+        data: {
+          id: item._id,
+          templateId
+        },
+      })
+      .then(() => {
+        wx.showToast({
+          title: '取消订阅成功',
+          icon: 'success',
+          duration: 2000,
+        });
+      })
+      .catch(() => {
+        wx.showToast({
+          title: '取消订阅失败',
+          icon: 'success',
+          duration: 2000,
+        });
+      });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
 
   /**
    * 用户点击右上角分享

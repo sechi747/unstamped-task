@@ -1,8 +1,9 @@
+
 /* 倒计时 */
 .countDownContainer {
   display: flex;
   justify-content: space-around;
-  margin-top: 30rpx;
+  margin-top: 40rpx;
   height: 80rpx;
 }
 
@@ -65,7 +66,7 @@
 
 /* 截止时间 */
 .deadlineContainer {
-  margin-top: 40rpx;
+  margin-top: 50rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +112,7 @@
   padding-top: 10rpx;
   padding-left: 18rpx;
   margin-left: 18rpx;
-  margin-bottom: 60rpx;
+  margin-bottom: 100rpx;
   width: 680rpx;
   height: 450rpx;
   background-color: rgba(236,240,241, 0.5);
@@ -128,6 +129,3 @@
   font-size: 28rpx !important;
 }
 
-.button3 {
-  margin-top: 50rpx;
-}

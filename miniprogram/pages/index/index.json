@@ -3,5 +3,6 @@
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
     "van-transition": "@vant/weapp/transition/index"
   },
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#fff"
 }

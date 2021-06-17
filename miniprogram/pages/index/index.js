@@ -39,7 +39,7 @@ Page({
     })
     .get()
     .then(res => {
-      if (res.data.length <= 0) {
+      if (res.data.length <= 0 & this.data.tasks.length !== 0) {
         Toast.fail({
           message: '全部加载完啦',
           duration: 1000
@@ -178,10 +178,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.setData({
-      tasks: []
-    })
-    this.getData()
+    if (this.data.tasks.length !== 0) {
+      this.setData({
+        tasks: []
+      })
+      this.getData()
+    }
     wx.stopPullDownRefresh()
   },
 
@@ -189,7 +191,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getData()
+    if (this.data.tasks.length !== 0) {
+      this.getData()
+    }
+
   },
 
 })

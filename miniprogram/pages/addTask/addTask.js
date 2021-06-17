@@ -30,6 +30,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let userInfo = wx.getStorageSync('userInfo')
+    if(!userInfo) {
+      Dialog.alert({
+        message: '请先登录',
+      }).then(() => {
+        wx.redirectTo({
+          url: '../personal/personal',
+        })
+      })
+      return
+    }
     this.typewriter()
   },
 
@@ -90,8 +101,8 @@ Page({
     this.pageData.title = event.detail.value
   },
 
-  handleTextareaBlur(event) {
-    this.pageData.content = event.detail.value
+  handleTextareaInput(event) {
+    this.pageData.content = event.detail
   },
 
   onChooseTime() {

@@ -84,3 +84,25 @@ page {
 .icon-kafei1 {
   font-size: 100rpx;
 }
+
+.githubContainer,.giteeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip {
+  margin-top: 90rpx;
+  font-size: 26rpx;
+}
+
+.githubTitle,.giteeTitle {
+  margin-top: 20rpx;
+}
+
+.githubImg,.giteeImg {
+  margin-top: 40rpx;
+  width: 250rpx;
+  height: 250rpx;
+}

@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-popup": "@vant/weapp/popup/index"
   }
 }

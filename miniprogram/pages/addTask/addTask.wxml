@@ -28,7 +28,7 @@
     <van-field
       type="textarea"
       placeholder="请输入事项内容，最多可输入160个字符"
-      bind:blur="handleTextareaBlur"
+      bind:input="handleTextareaInput"
       input-class="textarea-input"
       clearable="true"
       maxlength="160"
